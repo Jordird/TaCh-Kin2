@@ -94,18 +94,7 @@
     </div>
     <div style="display: flex; justify-content: flex-end">
       <div class="m-2">
-        <div class="row" style="width: 400px">
-          <div class="col-md-6">
-            <button class="btn btn-danger" (click)="goBack()">
-              <i class="fa-solid fa-ban"></i>&nbsp; Annuler
-            </button>
-          </div>
-          <div class="col-md-6">
-            <button class="btn btn-primary" type="submit">
-              <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer
-            </button>
-          </div>
-        </div>
+        <app-deux-boutton (back)="goBack()"></app-deux-boutton>
       </div>
     </div>
   </form>

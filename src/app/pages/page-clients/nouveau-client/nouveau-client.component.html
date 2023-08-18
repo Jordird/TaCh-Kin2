@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [formGroup]="infoClient">
   <div class="row">
     <div class="p-2">
       <img
@@ -26,7 +26,17 @@
               type="text"
               class="form-control fw-light"
               aria-describedby="helpId"
-              placeholder="Nom et prenom"
+              placeholder="Nom "
+              formControlName="nom"
+            />
+          </div>
+          <div class="form-group mb-2">
+            <input
+              type="text"
+              class="form-control fw-light"
+              aria-describedby="helpId"
+              placeholder="Prenom"
+              formControlName="prenom"
             />
           </div>
           <div class="form-group mb-2">
@@ -37,6 +47,7 @@
               id=""
               aria-describedby="helpId"
               placeholder="E-mail"
+              formControlName="email"
             />
           </div>
           <div class="form-group mb-2">
@@ -47,11 +58,14 @@
               id=""
               aria-describedby="helpId"
               placeholder="Numero télephone"
+              formControlName="numeroPhone"
             />
           </div>
-          <div>
-            sexe :
-            <input type="radio" name="" id="" />
+          <div class="form-group mt-2">
+            <select class="form-select" formControlName="sexe">
+              <option class="fw-light">Homme</option>
+              <option class="fw-light">Femme</option>
+            </select>
           </div>
         </div>
         <div class="col-md-6">
@@ -66,6 +80,7 @@
               class="form-control fw-light"
               aria-describedby="helpId"
               placeholder="Adresse"
+              formControlName="adresse"
             />
           </div>
           <div class="form-group mb-2">
@@ -74,6 +89,7 @@
               class="form-control fw-light"
               aria-describedby="helpId"
               placeholder="Ville"
+              formControlName="ville"
             />
           </div>
           <div class="form-group mb-2">
@@ -82,6 +98,7 @@
               class="form-control fw-light"
               aria-describedby="helpId"
               placeholder="Pays"
+              formControlName="pays"
             />
           </div>
         </div>
@@ -89,8 +106,6 @@
     </div>
   </div>
   <div style="display: flex; justify-content: flex-end">
-    <div class="m-2">
-      <app-deux-boutton></app-deux-boutton>
-    </div>
+    <app-deux-boutton (back)="goBack()" (clickSave)="save()"></app-deux-boutton>
   </div>
 </div>

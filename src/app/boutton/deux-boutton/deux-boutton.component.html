@@ -1,11 +1,11 @@
-<div class="row" style="width: 400px">
-  <div class="col-md-6">
-    <button class="btn btn-danger">
+<div class="row mt-1 mb-2" style="display: flex; flex-direction: row">
+  <div class="col">
+    <button class="btn btn-danger" type="reset" (click)="goBack()">
       <i class="fa-solid fa-ban"></i>&nbsp; Annuler
     </button>
   </div>
-  <div class="col-md-6">
-    <button class="btn btn-primary">
+  <div class="col">
+    <button class="btn btn-primary" type="submit" (click)="save()">
       <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer
     </button>
   </div>

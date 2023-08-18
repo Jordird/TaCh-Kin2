@@ -19,6 +19,7 @@ import { NouveauStockComponent } from './page-articles/mvt-stock/nouveau-stock/n
 import { ChangerMotDePassComponent } from './page-profil/changer-mot-de-pass/changer-mot-de-pass.component';
 import { NouvelUtilisateurComponent } from './pageReglages/page-utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageUtilisateurComponent } from './pageReglages/page-utilisateur/page-utilisateur.component';
+import { AchatClientComponent } from './page-clients/achat-client/achat-client.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,11 @@ const routes: Routes = [
       {
         path: 'client',
         component: PageClientsComponent,
+        canActivate: [ApplicationGuardService],
+      },
+      {
+        path: 'achatClient',
+        component: AchatClientComponent,
         canActivate: [ApplicationGuardService],
       },
       {

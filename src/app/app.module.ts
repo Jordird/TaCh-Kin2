@@ -45,6 +45,8 @@ import { AppPagesRoutingModule } from './pages/page-routing.module';
 
 import { SelectArtcilesComponent } from './pages/page-articles/select-artciles/select-artciles.component';
 import { AuthService } from './services/auth/auth.service';
+import { AchatClientComponent } from './pages/page-clients/achat-client/achat-client.component';
+import { NouveauComponent } from './boutton/nouveau/nouveau/nouveau.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import { AuthService } from './services/auth/auth.service';
     ModifierProfilComponent,
 
     SelectArtcilesComponent,
+    AchatClientComponent,
+    NouveauComponent,
   ],
 
   imports: [
