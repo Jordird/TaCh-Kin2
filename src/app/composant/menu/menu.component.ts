@@ -65,7 +65,7 @@ export class MenuComponent {
           id: '33',
           titre: 'Achat clients',
           icon: 'fas fa-cart-arrow-down fa-xs fa-fw',
-          url: 'commandes-clients',
+          url: 'achatClient',
         },
       ],
     },
