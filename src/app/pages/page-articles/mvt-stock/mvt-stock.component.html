@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row p-2">
+    <!-- liste des articles -->
+    <div class="col">
+      <h2 class="fw-bold">Mouvement des stock</h2>
+    </div>
+    <!-- boutton d'action -->
+    <div class="col">
+      <div class="boutton">
+        <app-trois-bouttons (clickEvent)="nouveauStock()"></app-trois-bouttons>
+      </div>
+    </div>
+  </div>
+  <!-- detail -->
+  <div class="row">
+    <div class="container mb-2">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              <app-detail-stock></app-detail-stock>
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body p-2">
+              <div class="container max-height">
+                <app-entre-sortie></app-entre-sortie>
+                <app-entre-sortie></app-entre-sortie>
+                <app-entre-sortie></app-entre-sortie>
+                <app-entre-sortie></app-entre-sortie>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="mt-2 mb-2 center">
+    <app-pagination></app-pagination>
+  </div>
+</div>

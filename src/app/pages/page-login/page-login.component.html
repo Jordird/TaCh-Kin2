@@ -1,0 +1,50 @@
+<div class="container" *ngIf="isLoggedIn()">
+  <div class="card mt-2">
+    <div class="card-body">
+      <div class="card-header mb-4"><h2 class="fw-bold">Se connecter</h2></div>
+      <div class="form-group mb-3">
+        <input
+          type="email"
+          class="form-control fw-light"
+          aria-describedby="helpId"
+          [(ngModel)]="username"
+          placeholder="Exemple@gmail.com"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control fw-light"
+          aria-describedby="helpId"
+          [(ngModel)]="password"
+          placeholder="Mot de pass"
+        />
+      </div>
+      <div class="row mt-2 motDePass">
+        <button type="button" class="btn btn-link">Mot de pass oublié?</button>
+      </div>
+      <div class="row mt-2 connecter">
+        <button type="button" class="btn btn-primary" (click)="login()">
+          &nbsp; Se connecter
+        </button>
+      </div>
+      <div class="row mt-2">
+        <p *ngIf="logginError" style="color: red">
+          Email ou le mot de pass est invalide
+        </p>
+      </div>
+      <div class="row center mt-3">
+        <div style="width: 60px"><p class="fw-light">ou</p></div>
+      </div>
+      <div class="row center">
+        <div class="center">
+          <p class="fw-light m-0">Vous n'avez pas de compte?</p>
+          &nbsp;
+          <a [routerLink]="['/inscription']" style="text-decoration: none"
+            >Creer un compte</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

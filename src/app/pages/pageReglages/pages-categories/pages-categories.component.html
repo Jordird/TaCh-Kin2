@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row p-2">
+    <!-- liste des articles -->
+    <div class="col">
+      <h2 class="fw-bold">Liste des catégories</h2>
+    </div>
+    <!-- boutton d'action -->
+    <div class="col">
+      <div class="boutton">
+        <app-trois-bouttons (clickEvent)="newCategory()"></app-trois-bouttons>
+      </div>
+    </div>
+  </div>
+  <!-- detail -->
+  <div class="row">
+    <div class="container mb-2">
+      <app-detail-categories
+        *ngFor="let item of listCategories"
+        [categorie]="item"
+      ></app-detail-categories>
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="mt-2 mb-2 center">
+    <app-pagination></app-pagination>
+  </div>
+</div>

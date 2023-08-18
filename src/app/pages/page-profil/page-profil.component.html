@@ -1,0 +1,71 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col card m-2">
+      <div class="center-column">
+        <div class="p-2">
+          <img
+            src="../../../assets/images/blank-profile-picture-g06e1e6fec_1280.png"
+            style="height: 100px; width: 100px"
+            class="rounded-circle"
+          />
+        </div>
+        <div class="center-column">
+          <div>
+            <h3 class="fw-bold">Nom prenom</h3>
+          </div>
+          <div><small class="fw-light">1234 Tana Tanjombato</small></div>
+        </div>
+        <!-- boutton -->
+        <div class="center-row">
+          <div>
+            <button class="btn btn-primary" (click)="editProfil()">
+              <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Modifier
+            </button>
+          </div>
+          <div>
+            <button class="btn btn-success" (click)="changerMotdePass()">
+              <i class="fa fa-lock ml-1" aria-hidden="true"></i>&nbsp; Changer
+              le mot de pass
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col card pb-4 m-2 pt-2">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td scope="row"><p class="p-0 m-0 fw-bolder">Nom complet :</p></td>
+            <td>
+              <p class="fw-light m-0">Nom et prenom</p>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row"><p class="p-0 m-0 fw-bolder">Email :</p></td>
+            <td>
+              <p class="fw-light m-0">You@gmail.com</p>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row"><p class="p-0 m-0 fw-bolder">Telephone :</p></td>
+            <td>
+              <p class="fw-light m-0">034 44 439 33</p>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row"><p class="p-0 m-0 fw-bolder">Adresse :</p></td>
+            <td>
+              <p class="fw-light m-0">VIlle , 1232</p>
+            </td>
+          </tr>
+          <tr>
+            <td scope="row"><p class="p-0 m-0 fw-bolder">Entreprise :</p></td>
+            <td>
+              <p class="fw-light m-0">Nom de l'entreprise</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

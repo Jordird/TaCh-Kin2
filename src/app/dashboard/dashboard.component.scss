@@ -1,0 +1,36 @@
+.image-logo {
+  height: 50px;
+  width: 90px;
+}
+.main-container {
+  margin: 40px;
+}
+
+.min-height {
+  min-height: 500px;
+}
+.no-flex-wrap {
+  flex-wrap: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+
+.min-height-80 {
+  min-height: 80px;
+}
+.min-height-400 {
+  min-height: 380px;
+}
+.min-height-50 {
+  min-height: 60px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.min-height-600 {
+  min-height: 500px;
+}
+body {
+}

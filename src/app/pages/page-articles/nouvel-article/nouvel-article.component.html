@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="p-2 img-et-btn">
+    <div class="m-0 p-0">
+      <img
+        src="../../../../assets/images/articles/talon.jpeg"
+        alt=""
+        class="rounded-circle"
+        style="height: 150px; width: 110"
+      />
+      <div class="m-0 p-0 btn-plus">
+        <button class="btn btn-ligth p-0 m-0">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3>Information de l'article</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <form class="d-flex">
+            <div class="col-md-6">
+              <div class="form-group mb-2" [formGroup]="articleForm">
+                <input
+                  type="text"
+                  class="form-control fw-light"
+                  aria-describedby="helpId"
+                  placeholder="Nom article"
+                  name="nomArticle"
+                  formControlName="nomArticle"
+                />
+              </div>
+              <div [formGroup]="contenuForm">
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    class="form-control fw-light"
+                    aria-describedby="helpId"
+                    placeholder="Prix "
+                    name="prix"
+                    formControlName="prix"
+                  />
+                </div>
+                <div class="form-group mb-2">
+                  <input
+                    type="text"
+                    class="form-control fw-light"
+                    aria-describedby="helpId"
+                    placeholder="Couleur"
+                    name="couleur"
+                    formControlName="couleur"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" [formGroup]="contenuForm">
+              <div class="form-group mb-2">
+                <input
+                  type="text"
+                  class="form-control fw-light"
+                  aria-describedby="helpId"
+                  placeholder="quantité"
+                  name="quantité"
+                  formControlName="quantite"
+                />
+              </div>
+              <div class="form-group mb-2">
+                <input
+                  type="text"
+                  class="form-control fw-light"
+                  aria-describedby="helpId"
+                  placeholder="Pointure"
+                  name="Pointure"
+                  formControlName="pointure"
+                />
+              </div>
+              <select class="form-select">
+                <option selected>selectionner une catégorie</option>
+                <option value="">
+                  <app-select-artciles
+                    *ngFor="let item of listCategories"
+                    [categorie]="item"
+                  >
+                  </app-select-artciles>
+                </option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: flex-end">
+      <div class="m-2">
+        <div class="row" style="width: 400px">
+          <div class="col-md-6">
+            <button class="btn btn-danger" (click)="goBack()">
+              <i class="fa-solid fa-ban"></i>&nbsp; Annuler
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

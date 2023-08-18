@@ -1,0 +1,38 @@
+<div class="containrer">
+  <div style="margin: 20px">
+    <div class="container mt-1"><h3>Nouvelle catégories</h3></div>
+
+    <form
+      class="form-control"
+      [formGroup]="categoryForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div>
+        <div class="form-group m-2">
+          <input
+            type="text"
+            class="form-control fw-light"
+            aria-describedby="helpId"
+            placeholder="Nom catégories"
+            formControlName="nomCategorie"
+            required
+          />
+        </div>
+        <div class="rigth">
+          <div class="row" style="width: 400px">
+            <div class="col-md-6">
+              <button class="btn btn-danger" (click)="goBack()">
+                <i class="fa-solid fa-ban"></i>&nbsp; Annuler
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  max-width: 500px;
+}
+.card {
+  width: 500px;
+}
+.btn-link {
+  text-decoration: none;
+  width: 200px;
+}
+.motDePass {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn-primary {
+  width: 400px;
+}
+.connecter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

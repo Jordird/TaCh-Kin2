@@ -1,0 +1,36 @@
+<div class="main-container">
+  <div class="row min-height-600 no-flex-wrap" style="border: none">
+    <!-- gauche -->
+    <div class="card col-md-2 min-height no-flex">
+      <!-- logo -->
+      <div class="row center mt-2">
+        <img
+          src="../../assets/images/logo.jpeg"
+          alt="logo taChKin"
+          style="height: 60px; width: 130px"
+        />
+      </div>
+      <!-- menu -->
+      <div class="row mt-3">
+        <app-menu></app-menu>
+      </div>
+    </div>
+    <!-- droite -->
+    <div class="card col-md-10 ml-2 p-0" style="width: 1060px; border: none">
+      <div class="col p-0 flex">
+        <!-- header -->
+        <div class="card min-height-80">
+          <div class="container">
+            <app-header></app-header>
+          </div>
+        </div>
+        <!-- container -->
+        <div class="card min-height-400 mt-2">
+          <router-outlet></router-outlet>
+        </div>
+        <!-- footer -->
+        <!-- <div class="card min-height-50 mt-2"><app-footer></app-footer></div> -->
+      </div>
+    </div>
+  </div>
+</div>
