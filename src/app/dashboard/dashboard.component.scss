@@ -3,11 +3,14 @@
   width: 90px;
 }
 .main-container {
-  margin: 40px;
+  margin: 20px;
 }
-
+.rightCard {
+  background-color: rgb(202, 34, 34);
+}
 .min-height {
   min-height: 500px;
+  background-color: rgb(202, 34, 34);
 }
 .no-flex-wrap {
   flex-wrap: inherit;
@@ -31,6 +34,4 @@
 }
 .min-height-600 {
   min-height: 500px;
-}
-body {
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from 'src/app/models/cleints';
 
 @Component({
@@ -8,4 +8,8 @@ import { Client } from 'src/app/models/cleints';
 })
 export class DetailClientComponent {
   @Input() client!: Client;
+  @Output() onDelete = new EventEmitter();
+  deleteClent() {
+    this.onDelete.emit();
+  }
 }

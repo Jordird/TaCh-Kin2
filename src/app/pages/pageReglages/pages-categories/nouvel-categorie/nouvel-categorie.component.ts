@@ -10,6 +10,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class NouvelCategorieComponent implements OnInit {
   categoryForm!: FormGroup;
+  cateogoryError: boolean = false;
 
   constructor(
     private router: Router,
@@ -32,9 +33,10 @@ export class NouvelCategorieComponent implements OnInit {
       next: (res) => {
         alert('CREATED');
         this.router.navigate(['categories']);
+        this.cateogoryError = false;
       },
       error: (err) => {
-        alert('ERROR');
+        this.cateogoryError = true;
       },
     });
   }

@@ -1,16 +1,16 @@
-.form {
-  width: 600px;
-  padding: 0px;
-  margin: 20px;
+.form-control {
+  width: 300px;
 }
 .disFlex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid rgb(48, 43, 43);
-  border-radius: 20px;
-  margin-top: 30px;
-  width: 900px;
+
+  width: 80%;
   margin-left: 40px;
+  padding: 20px;
+}
+.form-group {
+  margin: 10px;
 }

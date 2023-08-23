@@ -1,40 +1,42 @@
 <div class="container m-2">
-  <div class="col"><h2 class="fw-bold">Changer le mot de passe</h2></div>
-  <div class="disFlex">
-    <div class="col">
-      <div class="form">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Ancien mot de passe"
-        />
-      </div>
-    </div>
-    <div class="col">
-      <div class="form">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Nouveau mot de passe"
-        />
-      </div>
-    </div>
-    <div class="col">
-      <div class="form">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Confirmer le mot de passe"
-        />
-      </div>
-    </div>
+  <div class="col">
+    <h2 class="fw-bold red-color">Changer le mot de passe</h2>
   </div>
-  <div class="col mt-2" style="display: flex; justify-content: flex-end">
-    <button class="btn btn-danger">
-      <i class="fa-solid fa-ban"></i>&nbsp; Annuler
-    </button>
-    <button class="btn btn-primary">
-      <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer
-    </button>
+  <div class="center">
+    <div class="card disFlex">
+      <div class="col">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ancien mot de passe"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nouveau mot de passe"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Confirmer le mot de passe"
+          />
+        </div>
+      </div>
+      <div class="col mt-2" style="display: flex; justify-content: flex-end">
+        <app-deux-boutton
+          (back)="goBack()"
+          (clickSave)="savePassword()"
+        ></app-deux-boutton>
+      </div>
+    </div>
   </div>
 </div>

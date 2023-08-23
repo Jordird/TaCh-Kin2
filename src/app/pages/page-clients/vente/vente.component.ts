@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cmd-clients',
-  templateUrl: './cmd-clients.component.html',
-  styleUrls: ['./cmd-clients.component.scss'],
+  selector: 'app-vente',
+  templateUrl: './vente.component.html',
+  styleUrls: ['./vente.component.scss'],
 })
-export class CmdClientsComponent {
+export class VenteComponent {
   constructor(private router: Router) {}
-  newCmdCli() {
+  newVente() {
     this.router.navigate(['nouveauCommandeClient']);
   }
 }

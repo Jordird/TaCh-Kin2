@@ -7,7 +7,7 @@ export class AuthService {
   constructor() {}
   private loggedIn = false;
   login(username: string, password: string): boolean {
-    if (username === 'user' && password === 'password') {
+    if (username === 'username' && password === 'password') {
       this.loggedIn = true;
       localStorage.setItem('isLoggedIn', 'true');
       return true;

@@ -6,7 +6,6 @@ import { PageArticlesComponent } from './page-articles/page-articles.component';
 import { ApplicationGuardService } from '../services/guard/application-guard.service';
 import { PageStatistiqueComponent } from './page-statistique/page-statistique.component';
 import { MvtStockComponent } from './page-articles/mvt-stock/mvt-stock.component';
-import { CmdClientsComponent } from './page-clients/cmd-clients/cmd-clients.component';
 import { PageMoneyComponent } from './page-money/page-money.component';
 import { PagesCategoriesComponent } from './pageReglages/pages-categories/pages-categories.component';
 import { PageClientsComponent } from './page-clients/page-clients.component';
@@ -20,6 +19,7 @@ import { ChangerMotDePassComponent } from './page-profil/changer-mot-de-pass/cha
 import { NouvelUtilisateurComponent } from './pageReglages/page-utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageUtilisateurComponent } from './pageReglages/page-utilisateur/page-utilisateur.component';
 import { AchatClientComponent } from './page-clients/achat-client/achat-client.component';
+import { VenteComponent } from './page-clients/vente/vente.component';
 
 const routes: Routes = [
   {
@@ -36,15 +36,14 @@ const routes: Routes = [
         path: 'statistique',
         component: PageStatistiqueComponent,
       },
+      {
+        path: 'vente',
+        component: VenteComponent,
+      },
 
       {
         path: 'stock',
         component: MvtStockComponent,
-        canActivate: [ApplicationGuardService],
-      },
-      {
-        path: 'vente-clients',
-        component: CmdClientsComponent,
         canActivate: [ApplicationGuardService],
       },
 

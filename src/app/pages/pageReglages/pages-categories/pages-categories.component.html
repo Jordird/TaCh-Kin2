@@ -2,12 +2,12 @@
   <div class="row p-2">
     <!-- liste des articles -->
     <div class="col">
-      <h2 class="fw-bold">Liste des catégories</h2>
+      <h2 class="fw-bold red-color">Liste des catégories</h2>
     </div>
     <!-- boutton d'action -->
     <div class="col">
       <div class="boutton right">
-        <app-nouveau (clickEvent)="newCategory()"></app-nouveau>
+        <app-nouveau-boutton (clickEvent)="newCategory()"></app-nouveau-boutton>
       </div>
     </div>
   </div>
@@ -15,7 +15,9 @@
   <div class="row">
     <div class="container mb-2">
       <app-detail-categories
-        *ngFor="let item of listCategories"
+        (onDelete)="deleteCategorie(i)"
+        *ngFor="let item of listCategories; index as i"
+        [indexCat]="i"
         [categorie]="item"
       ></app-detail-categories>
     </div>

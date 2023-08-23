@@ -35,12 +35,6 @@ export class MenuComponent {
           icon: 'fa-solid fa-list',
           url: 'articles',
         },
-        {
-          id: '22',
-          titre: 'Stock',
-          icon: 'fa-solid fa-cart-shopping',
-          url: 'stock',
-        },
       ],
     },
     {
@@ -55,34 +49,42 @@ export class MenuComponent {
           icon: 'fa-solid fa-users',
           url: 'client',
         },
+      ],
+    },
+    {
+      id: '4',
+      titre: 'Vente&Achat',
+      icon: 'fa-solid fa-cart-plus',
+      url: '',
+      sousMenu: [
         {
-          id: '32',
-          titre: 'Vente clients',
+          id: '42',
+          titre: 'Vente ',
           icon: 'fa-solid fa-cart-plus',
-          url: 'vente-clients',
+          url: 'vente',
         },
         {
-          id: '33',
-          titre: 'Achat clients',
+          id: '43',
+          titre: 'Achat ',
           icon: 'fas fa-cart-arrow-down fa-xs fa-fw',
           url: 'achatClient',
         },
       ],
     },
     {
-      id: '4',
+      id: '5',
       titre: 'Money',
       icon: 'fa-solid fa-money-bill',
       url: '',
       sousMenu: [
         {
-          id: '41',
+          id: '51',
           titre: 'Money',
           icon: 'fa-solid fa-money-bill',
           url: 'money',
         },
         {
-          id: '42',
+          id: '52',
           titre: "Gerer de l'argent",
           icon: 'fa-solid fa-money-bill-transfer',
           url: '',
@@ -90,19 +92,19 @@ export class MenuComponent {
       ],
     },
     {
-      id: '5',
+      id: '6',
       titre: 'Reglages',
       icon: 'fa-solid fa-gears',
       url: '',
       sousMenu: [
         {
-          id: '51',
+          id: '61',
           titre: 'Catégories',
           icon: 'fa fa-list',
           url: 'categories',
         },
         {
-          id: '52',
+          id: '62',
           titre: 'Utilisateurs',
           icon: 'fa-solid fa-user',
           url: 'utilisateurs',
