@@ -13,7 +13,6 @@ import { PageMoneyComponent } from './pages/page-money/page-money.component';
 import { PagesCategoriesComponent } from './pages/pageReglages/pages-categories/pages-categories.component';
 import { PageUtilisateurComponent } from './pages/pageReglages/page-utilisateur/page-utilisateur.component';
 import { MvtStockComponent } from './pages/page-articles/mvt-stock/mvt-stock.component';
-import { CmdClientsComponent } from './pages/page-clients/cmd-clients/cmd-clients.component';
 import { HeaderComponent } from './composant/header/header.component';
 import { FooterComponent } from './composant/footer/footer.component';
 import { TroisBouttonsComponent } from './boutton/trois-bouttons/trois-bouttons.component';
@@ -29,8 +28,7 @@ import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { NouvelCategorieComponent } from './pages/pageReglages/pages-categories/nouvel-categorie/nouvel-categorie.component';
 import { DetailCategoriesComponent } from './pages/pageReglages/pages-categories/detail-categories/detail-categories.component';
 import { ChangerMotDePassComponent } from './pages/page-profil/changer-mot-de-pass/changer-mot-de-pass.component';
-import { LivreCmdClientsComponent } from './pages/page-clients/cmd-clients/livre-cmd-clients/livre-cmd-clients.component';
-import { DetailCmdClientComponent } from './pages/page-clients/cmd-clients/detail-cmd-client/detail-cmd-client.component';
+
 import { NouveauStockComponent } from './pages/page-articles/mvt-stock/nouveau-stock/nouveau-stock.component';
 import { FormsModule } from '@angular/forms';
 import { NouveauCmdClientComponent } from './pages/page-clients/nouveau-cmd-client/nouveau-cmd-client.component';
@@ -47,6 +45,9 @@ import { SelectArtcilesComponent } from './pages/page-articles/select-artciles/s
 import { AuthService } from './services/auth/auth.service';
 import { AchatClientComponent } from './pages/page-clients/achat-client/achat-client.component';
 import { NouveauComponent } from './boutton/nouveau/nouveau/nouveau.component';
+import { Error404Component } from './composant/error404/error404.component';
+import { VenteComponent } from './pages/page-clients/vente/vente.component';
+import { DetailVenteComponent } from './pages/page-clients/vente/detail-vente/detail-vente.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,6 @@ import { NouveauComponent } from './boutton/nouveau/nouveau/nouveau.component';
     PagesCategoriesComponent,
     PageUtilisateurComponent,
     MvtStockComponent,
-    CmdClientsComponent,
     HeaderComponent,
     FooterComponent,
     TroisBouttonsComponent,
@@ -78,8 +78,7 @@ import { NouveauComponent } from './boutton/nouveau/nouveau/nouveau.component';
     NouvelCategorieComponent,
     DetailCategoriesComponent,
     ChangerMotDePassComponent,
-    LivreCmdClientsComponent,
-    DetailCmdClientComponent,
+
     NouveauStockComponent,
     NouveauCmdClientComponent,
     NouvelUtilisateurComponent,
@@ -89,6 +88,9 @@ import { NouveauComponent } from './boutton/nouveau/nouveau/nouveau.component';
     SelectArtcilesComponent,
     AchatClientComponent,
     NouveauComponent,
+    Error404Component,
+    VenteComponent,
+    DetailVenteComponent,
   ],
 
   imports: [

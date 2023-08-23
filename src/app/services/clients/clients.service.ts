@@ -19,4 +19,9 @@ export class ClientsService {
     const url = API + '/client';
     return this.http.get<Client[]>(url);
   }
+  delete() {
+    const url = API + '/client';
+
+    return this.http.delete<Client[]>(url);
+  }
 }

@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { articleService } from 'src/app/services/article/article.service';
@@ -11,9 +16,10 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./nouvel-article.component.scss'],
 })
 export class NouvelArticleComponent implements OnInit {
-  articleForm!: FormGroup;
   listCategories: Category[] = [];
+  articleForm!: FormGroup;
   contenuForm!: FormGroup;
+  selectedCntrl!: FormGroup;
 
   constructor(
     private router: Router,
@@ -27,6 +33,12 @@ export class NouvelArticleComponent implements OnInit {
     this.initArticleForm();
     this.initContenuForm();
     this.initList();
+    this.initSelectedForm();
+  }
+  initSelectedForm() {
+    this.selectedCntrl = this.formBuider.group({
+      categorie: new FormControl(),
+    });
   }
 
   private initArticleForm() {
@@ -42,6 +54,7 @@ export class NouvelArticleComponent implements OnInit {
       pointure: [null, Validators.required],
     });
   }
+
   initList() {
     this.categoryService.list().subscribe({
       next: (res) => {
@@ -53,10 +66,12 @@ export class NouvelArticleComponent implements OnInit {
     });
   }
   onSubmit() {
+    const selectedCntrl = this.selectedCntrl.getRawValue();
     const article = this.articleForm.getRawValue();
     const contenu = this.contenuForm.getRawValue();
     console.log(contenu);
     console.log(article);
+    console.log(selectedCntrl);
 
     this.contenuService.create(contenu).subscribe({
       next: (res) => {

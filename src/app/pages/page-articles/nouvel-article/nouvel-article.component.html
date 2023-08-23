@@ -1,28 +1,20 @@
 <div class="container">
-  <div class="p-2 img-et-btn">
-    <div class="m-0 p-0">
-      <img
-        src="../../../../assets/images/articles/talon.jpeg"
-        alt=""
-        class="rounded-circle"
-        style="height: 150px; width: 110"
-      />
-      <div class="m-0 p-0 btn-plus">
-        <button class="btn btn-ligth p-0 m-0">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <h3>Information de l'article</h3>
+  <div class="row mt-2">
+    <h3 class="red-color">Nouvelle article</h3>
   </div>
   <form (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="container">
-        <div class="row">
+        <div class="card m-2 pb-3 row mainCard">
           <form class="d-flex">
             <div class="col-md-6">
+              <div class="form-group mb-2">
+                <input
+                  type="file"
+                  class="form-control"
+                  aria-describedby="helpId"
+                />
+              </div>
               <div class="form-group mb-2" [formGroup]="articleForm">
                 <input
                   type="text"
@@ -56,6 +48,7 @@
                 </div>
               </div>
             </div>
+            &nbsp;&nbsp;
             <div class="col-md-6" [formGroup]="contenuForm">
               <div class="form-group mb-2">
                 <input
@@ -77,16 +70,13 @@
                   formControlName="pointure"
                 />
               </div>
-              <select class="form-select">
-                <option selected>selectionner une catégorie</option>
-                <option value="">
-                  <app-select-artciles
-                    *ngFor="let item of listCategories"
-                    [categorie]="item"
-                  >
-                  </app-select-artciles>
-                </option>
-              </select>
+              <div [formGroup]="selectedCntrl">
+                <select class="form-select" formControlName="categorie">
+                  <option>
+                    <app-select-artciles></app-select-artciles>
+                  </option>
+                </select>
+              </div>
             </div>
           </form>
         </div>

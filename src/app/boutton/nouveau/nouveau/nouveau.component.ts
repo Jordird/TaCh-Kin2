@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-nouveau',
+  selector: 'app-nouveau-boutton',
   templateUrl: './nouveau.component.html',
   styleUrls: ['./nouveau.component.scss'],
 })

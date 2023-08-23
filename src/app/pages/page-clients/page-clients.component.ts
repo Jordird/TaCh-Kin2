@@ -26,6 +26,17 @@ export class PageClientsComponent implements OnInit {
       },
     });
   }
+  deleteArticle(index: number) {
+    this.listClients = this.listClients.slice(index, -1);
+    this.clientService.delete().subscribe({
+      next: (res) => {
+        console.log('deleted');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
   nouvelClient() {
     this.router.navigate(['Nouveauclient']);
   }

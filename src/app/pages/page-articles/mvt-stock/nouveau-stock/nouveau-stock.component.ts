@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,17 @@ import { Router } from '@angular/router';
 })
 export class NouveauStockComponent {
   constructor(private router: Router) {}
-  save() {}
+  newStockForm = new FormGroup({
+    nomStock: new FormControl(),
+    prix: new FormControl(),
+    nombreDeStock: new FormControl(),
+    dateDeCreation: new FormControl(),
+  });
+
+  save() {
+    const stockForm = this.newStockForm.getRawValue();
+    console.log(stockForm);
+  }
   goBack() {
     this.router.navigate(['stock']);
   }

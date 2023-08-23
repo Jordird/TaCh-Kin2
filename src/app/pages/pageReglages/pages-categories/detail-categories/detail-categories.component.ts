@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category/category.service';
 
@@ -9,9 +9,12 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class DetailCategoriesComponent {
   @Input() categorie!: Category;
+  @Input() indexCat = 0;
+  @Output() onDelete = new EventEmitter();
 
   constructor(private categorieService: CategoryService) {}
   deleteCategory() {
-    alert('deleted');
+    this.onDelete.emit();
+    this.indexCat = --this.indexCat;
   }
 }

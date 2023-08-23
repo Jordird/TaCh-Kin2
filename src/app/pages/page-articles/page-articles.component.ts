@@ -41,7 +41,8 @@ export class PageArticlesComponent implements OnInit {
       },
     });
   }
-
+  deleteArticle() {}
+  editArticle() {}
   nouvelArticle() {
     this.router.navigate(['nouvelArticle']);
   }
