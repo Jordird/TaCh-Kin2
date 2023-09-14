@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
-  selector: 'app-nouvel-categorie',
-  templateUrl: './nouvel-categorie.component.html',
-  styleUrls: ['./nouvel-categorie.component.scss'],
+  selector: 'app-nouvelle-categorie',
+  templateUrl: './nouvelle-categorie.component.html',
+  styleUrls: ['./nouvelle-categorie.component.scss'],
 })
-export class NouvelCategorieComponent implements OnInit {
+export class NouvelleCategorieComponent implements OnInit {
   categoryForm!: FormGroup;
   cateogoryError: boolean = false;
 

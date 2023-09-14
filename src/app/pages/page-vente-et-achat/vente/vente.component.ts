@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class VenteComponent {
   constructor(private router: Router) {}
   newVente() {
-    this.router.navigate(['nouveauCommandeClient']);
+    this.router.navigate(['nouveauVente']);
   }
 }

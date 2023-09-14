@@ -18,8 +18,11 @@ import { NouveauStockComponent } from './page-articles/mvt-stock/nouveau-stock/n
 import { ChangerMotDePassComponent } from './page-profil/changer-mot-de-pass/changer-mot-de-pass.component';
 import { NouvelUtilisateurComponent } from './pageReglages/page-utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
 import { PageUtilisateurComponent } from './pageReglages/page-utilisateur/page-utilisateur.component';
-import { AchatClientComponent } from './page-clients/achat-client/achat-client.component';
-import { VenteComponent } from './page-clients/vente/vente.component';
+
+import { VenteComponent } from './page-vente-et-achat/vente/vente.component';
+import { NouveauVenteComponent } from './page-vente-et-achat/vente/nouveau-vente/nouveau-vente.component';
+import { NouvelAchatComponent } from './page-vente-et-achat/achat/nouvel-achat/nouvel-achat.component';
+import { AchatComponent } from './page-vente-et-achat/achat/achat.component';
 
 const routes: Routes = [
   {
@@ -40,7 +43,8 @@ const routes: Routes = [
         path: 'vente',
         component: VenteComponent,
       },
-
+      { path: 'nouveauVente', component: NouveauVenteComponent },
+      { path: 'nouvelAchat', component: NouvelAchatComponent },
       {
         path: 'stock',
         component: MvtStockComponent,
@@ -69,7 +73,7 @@ const routes: Routes = [
       },
       {
         path: 'achatClient',
-        component: AchatClientComponent,
+        component: AchatComponent,
         canActivate: [ApplicationGuardService],
       },
       {
@@ -103,6 +107,7 @@ const routes: Routes = [
         component: NouveauStockComponent,
         canActivate: [ApplicationGuardService],
       },
+      { path: 'nouvelAchat', component: NouvelAchatComponent },
       {
         path: 'changeMotDePass',
         component: ChangerMotDePassComponent,

@@ -48,6 +48,7 @@ export class NouvelArticleComponent implements OnInit {
   }
   private initContenuForm() {
     this.contenuForm = this.formBuider.group({
+      photo: [null, Validators.required],
       prix: [null, Validators.required],
       couleur: [null, Validators.required],
       quantite: [null, Validators.required],

@@ -6,19 +6,21 @@
     <div class="row">
       <div class="container">
         <div class="card m-2 pb-3 row mainCard">
+          <div class="container form-group mb-3" [formGroup]="contenuForm">
+            <label class="mb-1">Photo de l'article :</label>
+            <input
+              type="file"
+              class="form-control"
+              style="width: 40%"
+              formControlName="photo"
+            />
+          </div>
           <form class="d-flex">
             <div class="col-md-6">
-              <div class="form-group mb-2">
-                <input
-                  type="file"
-                  class="form-control"
-                  aria-describedby="helpId"
-                />
-              </div>
               <div class="form-group mb-2" [formGroup]="articleForm">
                 <input
                   type="text"
-                  class="form-control fw-light"
+                  class="form-control"
                   aria-describedby="helpId"
                   placeholder="Nom article"
                   name="nomArticle"
@@ -29,7 +31,7 @@
                 <div class="form-group mb-2">
                   <input
                     type="text"
-                    class="form-control fw-light"
+                    class="form-control"
                     aria-describedby="helpId"
                     placeholder="Prix "
                     name="prix"
@@ -39,7 +41,7 @@
                 <div class="form-group mb-2">
                   <input
                     type="text"
-                    class="form-control fw-light"
+                    class="form-control"
                     aria-describedby="helpId"
                     placeholder="Couleur"
                     name="couleur"
@@ -53,7 +55,7 @@
               <div class="form-group mb-2">
                 <input
                   type="text"
-                  class="form-control fw-light"
+                  class="form-control"
                   aria-describedby="helpId"
                   placeholder="quantité"
                   name="quantité"
@@ -63,7 +65,7 @@
               <div class="form-group mb-2">
                 <input
                   type="text"
-                  class="form-control fw-light"
+                  class="form-control"
                   aria-describedby="helpId"
                   placeholder="Pointure"
                   name="Pointure"
