@@ -14,12 +14,12 @@
   <!-- detail -->
   <div class="row">
     <div class="container mb-2">
-      <app-detail-categories
+      <app-detail-categorie
         (onDelete)="deleteCategorie(i)"
         *ngFor="let item of listCategories; index as i"
         [indexCat]="i"
         [categorie]="item"
-      ></app-detail-categories>
+      ></app-detail-categorie>
     </div>
   </div>
   <!-- pagination -->

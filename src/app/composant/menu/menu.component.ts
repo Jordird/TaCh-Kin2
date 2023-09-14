@@ -9,20 +9,20 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
   public menuProperties: Array<menu> = [
-    {
-      id: '1',
-      titre: 'Tableau de bord',
-      icon: 'fa-solid fa-chart-simple',
-      url: '',
-      sousMenu: [
-        {
-          id: '11',
-          titre: 'Statistiques',
-          icon: 'fa-solid fa-chart-line',
-          url: 'statistique',
-        },
-      ],
-    },
+    // {
+    //   id: '1',
+    //   titre: 'Tableau de bord',
+    //   icon: 'fa-solid fa-chart-simple',
+    //   url: '',
+    //   sousMenu: [
+    //     {
+    //       id: '11',
+    //       titre: 'Statistiques',
+    //       icon: 'fa-solid fa-chart-line',
+    //       url: 'statistique',
+    //     },
+    //   ],
+    // },
     {
       id: '2',
       titre: 'Articles',
@@ -73,41 +73,35 @@ export class MenuComponent {
     },
     {
       id: '5',
-      titre: 'Money',
-      icon: 'fa-solid fa-money-bill',
+      titre: 'Catégories',
+      icon: 'fa fa-list',
       url: '',
       sousMenu: [
         {
           id: '51',
-          titre: 'Money',
-          icon: 'fa-solid fa-money-bill',
-          url: 'money',
-        },
-        {
-          id: '52',
-          titre: "Gerer de l'argent",
-          icon: 'fa-solid fa-money-bill-transfer',
-          url: '',
+          titre: 'Catégories',
+          icon: 'fa fa-list',
+          url: 'categories',
         },
       ],
     },
     {
       id: '6',
-      titre: 'Reglages',
-      icon: 'fa-solid fa-gears',
+      titre: 'Money',
+      icon: 'fa-solid fa-money-bill',
       url: '',
       sousMenu: [
         {
           id: '61',
-          titre: 'Catégories',
-          icon: 'fa fa-list',
-          url: 'categories',
+          titre: 'Money',
+          icon: 'fa-solid fa-money-bill',
+          url: 'money',
         },
         {
           id: '62',
-          titre: 'Utilisateurs',
-          icon: 'fa-solid fa-user',
-          url: 'utilisateurs',
+          titre: "Gerer de l'argent",
+          icon: 'fa-solid fa-money-bill-transfer',
+          url: '',
         },
       ],
     },

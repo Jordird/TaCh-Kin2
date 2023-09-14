@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
-  selector: 'app-detail-categories',
-  templateUrl: './detail-categories.component.html',
-  styleUrls: ['./detail-categories.component.scss'],
+  selector: 'app-detail-categorie',
+  templateUrl: './detail-categorie.component.html',
+  styleUrls: ['./detail-categorie.component.scss'],
 })
-export class DetailCategoriesComponent {
+export class DetailCategorieComponent {
   @Input() categorie!: Category;
   @Input() indexCat = 0;
   @Output() onDelete = new EventEmitter();

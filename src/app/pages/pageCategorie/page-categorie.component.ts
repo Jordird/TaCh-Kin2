@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
-  selector: 'app-pages-categories',
-  templateUrl: './pages-categories.component.html',
-  styleUrls: ['./pages-categories.component.scss'],
+  selector: 'app-page-categorie',
+  templateUrl: './page-categorie.component.html',
+  styleUrls: ['./page-categorie.component.scss'],
 })
-export class PagesCategoriesComponent implements OnInit {
+export class PageCategorieComponent implements OnInit {
   indexCat = 0;
   constructor(
     private router: Router,

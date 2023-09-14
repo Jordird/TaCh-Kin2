@@ -19,6 +19,7 @@ export class NouveauClientComponent {
     adresse: new FormControl(),
     ville: new FormControl(),
     pays: new FormControl(),
+    photo: new FormControl(),
   });
   goBack() {
     this.router.navigate(['client']);

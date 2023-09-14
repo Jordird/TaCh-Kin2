@@ -1,13 +1,22 @@
 <div class="container p-2">
-  <div class="form-group d-flex">
-    <label for="">Nom complet :</label>
-    <input
-      type="text"
-      class="form-control"
-      name=""
-      id=""
-      aria-describedby="helpId"
-      placeholder="Votre nom"
-    />
+  <div class="container">
+    <div class="form-group d-flex">
+      <input
+        type="text"
+        class="form-control"
+        name=""
+        id=""
+        aria-describedby="helpId"
+        placeholder="Nom"
+      />
+    </div>
+    <div class="rigth">
+      <div class="container" style="width: 400px">
+        <app-deux-boutton
+          (back)="goBack()"
+          (clickSave)="save()"
+        ></app-deux-boutton>
+      </div>
+    </div>
   </div>
 </div>
