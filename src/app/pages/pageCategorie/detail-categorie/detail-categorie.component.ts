@@ -15,6 +15,5 @@ export class DetailCategorieComponent {
   constructor(private categorieService: CategoryService) {}
   deleteCategory() {
     this.onDelete.emit();
-    this.indexCat = --this.indexCat;
   }
 }

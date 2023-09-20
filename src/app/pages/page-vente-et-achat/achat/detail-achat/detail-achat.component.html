@@ -1,1 +1,65 @@
-<p>detail-achat works!</p>
+<div class="container" style="margin: 5px" *ngIf="achat">
+  <div class="card">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="pt-2">{{ achat.idAchat }}</div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.nomCLient }}</h6>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="pt-3">
+            <h6 class="red-color">
+              <i class="fa fa-calendar" aria-hidden="true"></i> {{ achat.date }}
+            </h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6 class="fw-light">{{ achat.description }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.prixUnitaire }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.quantite }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.prixTotal }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.tva }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.prixHT }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ achat.prixTTC }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <app-edit-et-supprimer
+            (edit)="onEdit()"
+            (delete)="onDelete()"
+          ></app-edit-et-supprimer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
   background-color: rgb(161, 148, 148);
+}
+.full-width {
+  width: 100%;
+  min-height: 0px;
 }
 .center {
   display: flex;
@@ -48,4 +53,16 @@ button {
 }
 .borderLeft {
   border-left: 1px solid black;
+}
+.mainBgColor {
+  background-color: rgb(30, 91, 141);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

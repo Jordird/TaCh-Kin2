@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientsService } from 'src/app/services/clients/clients.service';
 
@@ -9,25 +14,31 @@ import { ClientsService } from 'src/app/services/clients/clients.service';
   styleUrls: ['./nouveau-client.component.scss'],
 })
 export class NouveauClientComponent {
-  constructor(private router: Router, private clientService: ClientsService) {}
-  infoClient = new FormGroup({
-    nom: new FormControl(),
-    prenom: new FormControl(),
-    email: new FormControl(),
-    sexe: new FormControl(),
-    numeroPhone: new FormControl(),
-    adresse: new FormControl(),
-    ville: new FormControl(),
-    pays: new FormControl(),
-    photo: new FormControl(),
+  constructor(
+    private router: Router,
+    private clientService: ClientsService,
+    private formBuilder: FormBuilder
+  ) {}
+  infoClient = this.formBuilder.group({
+    nom: [null, Validators.required],
+    prenom: [null, Validators.required],
+    email: [null, Validators.required],
+    sexe: [null, Validators.required],
+    numeroPhone: [null, Validators.required],
+    adresse: [null, Validators.required],
+    ville: [null, Validators.required],
+    pays: [null, Validators.required],
+    photo: [null, Validators.required],
+    codePostal: [null, Validators.required],
   });
   goBack() {
     this.router.navigate(['client']);
   }
+
   save() {
-    const infoClient = this.infoClient.getRawValue();
-    console.log(infoClient);
-    this.clientService.create(infoClient).subscribe({
+    const client = this.infoClient.getRawValue();
+    console.log(client);
+    this.clientService.create(client).subscribe({
       next: (res) => {
         alert('Client CREATED'), this.router.navigate(['client']);
       },
@@ -35,5 +46,9 @@ export class NouveauClientComponent {
         alert('ERROR');
       },
     });
+  }
+  selectedFile: any = null;
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0] ?? null;
   }
 }

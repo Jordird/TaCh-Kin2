@@ -5,7 +5,10 @@ button {
   align-items: center;
   flex-direction: row;
 }
-// .cont {
-//   display: flex;
-//   flex-direction: row;
-// }
+.modifBtn {
+  width: max-content;
+  background-color: green;
+}
+.changeBtn {
+  width: max-content;
+}

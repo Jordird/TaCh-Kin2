@@ -1,11 +1,13 @@
 export interface Client {
-  idClient: string;
-  nom: string;
-  prenom: string;
-  email: string;
-  sexe: string;
-  adresse: string;
-  ville: string;
-  pays: string;
-  numPhone: string;
+  idClient: number;
+  nom: string | null;
+  prenom: string | null;
+  email: string | null;
+  sexe: string | null;
+  adresse: string | null;
+  ville: string | null;
+  pays: string | null;
+  numPhone: string | null;
+  codePostal: number | null;
+  photo: string | null;
 }

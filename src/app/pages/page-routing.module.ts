@@ -7,22 +7,20 @@ import { ApplicationGuardService } from '../services/guard/application-guard.ser
 import { PageStatistiqueComponent } from './page-statistique/page-statistique.component';
 import { MvtStockComponent } from './page-articles/mvt-stock/mvt-stock.component';
 import { PageMoneyComponent } from './page-money/page-money.component';
-import { PagesCategoriesComponent } from './pageReglages/pages-categories/pages-categories.component';
+
 import { PageClientsComponent } from './page-clients/page-clients.component';
 import { NouveauClientComponent } from './page-clients/nouveau-client/nouveau-client.component';
-import { NouveauCmdClientComponent } from './page-clients/nouveau-cmd-client/nouveau-cmd-client.component';
 import { PageProfilComponent } from './page-profil/page-profil.component';
-import { NouvelCategorieComponent } from './pageReglages/pages-categories/nouvel-categorie/nouvel-categorie.component';
 import { NouvelArticleComponent } from './page-articles/nouvel-article/nouvel-article.component';
 import { NouveauStockComponent } from './page-articles/mvt-stock/nouveau-stock/nouveau-stock.component';
 import { ChangerMotDePassComponent } from './page-profil/changer-mot-de-pass/changer-mot-de-pass.component';
-import { NouvelUtilisateurComponent } from './pageReglages/page-utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
-import { PageUtilisateurComponent } from './pageReglages/page-utilisateur/page-utilisateur.component';
 
 import { VenteComponent } from './page-vente-et-achat/vente/vente.component';
 import { NouveauVenteComponent } from './page-vente-et-achat/vente/nouveau-vente/nouveau-vente.component';
 import { NouvelAchatComponent } from './page-vente-et-achat/achat/nouvel-achat/nouvel-achat.component';
 import { AchatComponent } from './page-vente-et-achat/achat/achat.component';
+import { PageCategorieComponent } from './pageCategorie/page-categorie.component';
+import { NouvelleCategorieComponent } from './pageCategorie/nouvelle-categorie/nouvelle-categorie.component';
 
 const routes: Routes = [
   {
@@ -58,14 +56,10 @@ const routes: Routes = [
       },
       {
         path: 'categories',
-        component: PagesCategoriesComponent,
+        component: PageCategorieComponent,
         canActivate: [ApplicationGuardService],
       },
-      {
-        path: 'utilisateurs',
-        component: PageUtilisateurComponent,
-        canActivate: [ApplicationGuardService],
-      },
+
       {
         path: 'client',
         component: PageClientsComponent,
@@ -81,10 +75,7 @@ const routes: Routes = [
         component: NouveauClientComponent,
         canActivate: [ApplicationGuardService],
       },
-      {
-        path: 'nouveauCommandeClient',
-        component: NouveauCmdClientComponent,
-      },
+
       {
         path: 'profil',
         component: PageProfilComponent,
@@ -93,7 +84,7 @@ const routes: Routes = [
 
       {
         path: 'nouvelCategorie',
-        component: NouvelCategorieComponent,
+        component: NouvelleCategorieComponent,
         canActivate: [ApplicationGuardService],
       },
 
@@ -113,8 +104,6 @@ const routes: Routes = [
         component: ChangerMotDePassComponent,
         canActivate: [ApplicationGuardService],
       },
-
-      { path: 'nouvelUtilisateur', component: NouvelUtilisateurComponent },
     ],
   },
 ];

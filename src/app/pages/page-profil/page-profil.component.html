@@ -18,12 +18,21 @@
         <!-- boutton -->
         <div class="center-row">
           <div>
-            <button class="btn btn-primary" (click)="editProfil()">
+            <button
+              mat-raised-button
+              (click)="editProfil()"
+              style="width: max-content; background-color: green; color: white"
+            >
               <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Modifier
             </button>
           </div>
           <div>
-            <button class="btn btn-success" (click)="changerMotdePass()">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="changerMotdePass()"
+              class="changeBtn"
+            >
               <i class="fa fa-lock ml-1" aria-hidden="true"></i>&nbsp; Changer
               le mot de pass
             </button>
@@ -70,7 +79,16 @@
   </div>
   <div class="row mt-2">
     <div class="right">
-      <button type="button" class="btn btn-danger" (click)="logOut()">
+      <button
+        type="button"
+        mat-raised-button
+        (click)="logOut()"
+        style="
+          width: max-content;
+          background-color: rgb(255, 85, 85);
+          color: white;
+        "
+      >
         <i class="fas fa-door-open fa-sm fa-fw"></i>&nbsp; Déconnection
       </button>
     </div>

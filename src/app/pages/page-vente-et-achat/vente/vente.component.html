@@ -11,5 +11,12 @@
       </div>
     </div>
   </div>
-  <div class="row"><app-detail-vente></app-detail-vente></div>
+  <div class="row">
+    <app-detail-vente
+      (onDelete)="deleteVente(i)"
+      *ngFor="let item of listVente; index as i"
+      [indexCat]="i"
+      [vente]="item"
+    ></app-detail-vente>
+  </div>
 </div>

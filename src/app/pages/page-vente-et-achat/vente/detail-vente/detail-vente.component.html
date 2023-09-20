@@ -1,87 +1,63 @@
-<div class="card mt-2">
-  <div class="row m-2">
-    <div class="col-md-4">
+<div class="container" style="margin: 5px" *ngIf="vente">
+  <div class="card">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <img
-            src="../../../../../assets/images/blank-profile-picture-g06e1e6fec_1280.png"
-            alt=""
-            class="rounded-circle"
-            style="width: 40px; height: 60px; padding-left: 0px"
-          />
+        <div class="col">
+          <div class="pt-2">{{ vente.idVente }}</div>
         </div>
-        <div class="col-md-9 borderLeft">
-          <div class="row">
-            <div class="col-md-2">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10">
-              <small class="fw-bold"> Nom</small>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10">
-              <small> Prenom</small>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2">
-              <i class="fa fa-phone green-color" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10">
-              <small class="green-color fw-bold"> 034 23 333 55</small>
-            </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.nomCLient }}</h6>
           </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="col-md-4 center borderLeft"
-      style="display: flex; flex-direction: column"
-    >
-      <div class="row fw-bold">
-        <div class="col-md-3 left">
-          <i class="fa fa-list" aria-hidden="true"></i>
-        </div>
-        <div class="col-md-9">
-          <small> CMD-1243</small>
-        </div>
-      </div>
-      <div class="row red-color">
-        <div class="col-md-3 left">
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <div class="col-md-9">
-          <small> 12-03 2023</small>
-        </div>
-      </div>
-      <div class="row fw-bold green-color" style="width: 140px">
-        <div class="col-md-4 left">
-          <div>
-            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+
+        <div class="col">
+          <div class="pt-3">
+            <h6 class="red-color">
+              <i class="fa fa-calendar" aria-hidden="true"></i> {{ vente.date }}
+            </h6>
           </div>
         </div>
-        <div class="col-md-8">
-          <small> Livré</small>
+        <div class="col">
+          <div class="pt-3">
+            <h6 class="fw-light">{{ vente.description }}</h6>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- boutton -->
-    <div
-      class="col-md-4 borderLeft"
-      style="display: flex; justify-content: flex-end"
-    >
-      <div class="align-row">
-        <div style="display: flex; flex-direction: row">
-          <button class="btn btn-link" style="text-decoration: none">
-            <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Modifier
-          </button>
-          <button class="btn btn-link red-color" style="text-decoration: none">
-            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp; Supprimer
-          </button>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.prixUnitaire }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.quantite }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.prixTotal }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.tva }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.prixHT }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pt-3">
+            <h6>{{ vente.prixTTC }}</h6>
+          </div>
+        </div>
+        <div class="col">
+          <app-edit-et-supprimer
+            (edit)="onEdit()"
+            (delete)="onDelete()"
+          ></app-edit-et-supprimer>
         </div>
       </div>
     </div>

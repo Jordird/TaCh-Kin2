@@ -2,29 +2,62 @@
   <div class="card mt-2">
     <div class="card-body">
       <div class="card-header mb-4"><h2 class="fw-bold">Se connecter</h2></div>
-      <div class="form-group mb-3">
-        <input
-          type="email"
-          class="form-control fw-light"
-          aria-describedby="helpId"
-          [(ngModel)]="username"
-          placeholder="Exemple@gmail.com"
-        />
-      </div>
-      <div class="form-group">
-        <input
-          type="password"
-          class="form-control fw-light"
-          aria-describedby="helpId"
-          [(ngModel)]="password"
-          placeholder="Mot de pass"
-        />
-      </div>
-      <div class="row mt-2 motDePass">
+      <form class="loginForm">
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              matInput
+              placeholder="Ex. you123@example.com"
+              [formControl]="emailFormControl"
+              [ngModel]="username"
+              [errorStateMatcher]="matcher"
+            />
+            <mat-error
+              *ngIf="
+                emailFormControl.hasError('email') &&
+                !emailFormControl.hasError('required')
+              "
+            >
+              Entrer une andress Email valide
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email est <strong>requis</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label>Mot de pass</mat-label>
+            <input
+              type="password"
+              matInput
+              [formControl]="passwordFormControl"
+              placeholder="Mot de pass"
+              [ngModel]="password"
+              [errorStateMatcher]="matcher"
+            />
+            <mat-error *ngIf="passwordFormControl.hasError('password')">
+              Entrer le mot de pass
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Entrer <strong>le mot de pass</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="row motDePass">
         <button type="button" class="btn btn-link">Mot de pass oublié?</button>
       </div>
       <div class="row mt-2 connecter">
-        <button type="button" class="btn btn-primary" (click)="login()">
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          (click)="login()"
+          style="width: 400px"
+        >
           &nbsp; Se connecter
         </button>
       </div>

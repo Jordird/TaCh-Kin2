@@ -1,40 +1,40 @@
-<div class="card mt-2" *ngIf="client">
+<mat-card class="p-2" *ngIf="client">
   <div class="row m-1">
-    <div class="col-md-6">
+    <div class="col">
       <div class="row">
         <div class="col-md-3">
           <img
-            src="../../../../assets/images/articles/WhatsApp Image 2023-06-11 at 08.56.53.jpeg"
+            src="{{ client.photo }}"
             alt=""
             style="width: 50px; height: 70px"
           />
         </div>
 
-        <div class="col-md-9 borderLeft">
-          <div class="row">
+        <div class="col borderLeft">
+          <div class="row max-content">
             <small
               ><i class="fa fa-info blue-color" aria-hidden="true"></i> &nbsp;{{
                 client.nom
               }}</small
             >
           </div>
-          <div class="row">
+          <div class="row max-content">
             <small
               ><i class="fa fa-info blue-color" aria-hidden="true"></i> &nbsp;{{
                 client.prenom
               }}</small
             >
           </div>
-          <div class="row">
+          <div class="row max-content">
             <small
               ><i class="fa fa-phone green-color" aria-hidden="true"></i
               >{{ client.numPhone }}</small
             >
           </div>
-          <div class="row">
+          <div class="row max-content">
             <small>{{ client.sexe }}</small>
           </div>
-          <div class="row">
+          <div class="row max-content">
             <small
               ><i class="fas fa-mail-bulk fa-xs fa-fw"></i>&nbsp;{{
                 client.email
@@ -45,38 +45,35 @@
       </div>
     </div>
     <div
-      class="col-md-4 borderLeft center"
+      class="col borderLeft center"
       style="display: flex; flex-direction: column"
     >
-      <div class="row">
+      <div class="row max-content">
         <small>{{ client.adresse }}</small>
       </div>
-      <div class="row">
+      <div class="row max-content">
         <small>{{ client.ville }}</small>
       </div>
-      <div class="row">
+      <div class="row max-content">
         <small>{{ client.pays }}</small>
       </div>
     </div>
     <!-- boutton -->
     <div
-      class="col-md-2 borderLeft"
-      style="display: flex; justify-content: center"
+      class="col borderLeft"
+      style="display: flex; justify-content: end; width: 100px"
     >
-      <div class="align-row">
+      <div class="align-row max-content">
         <div>
           <!-- edit -->
-          <button
-            class="btn btn-link green-color"
-            style="text-decoration: none"
-          >
+          <button mat-raised-button style="width: 10px">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         </div>
         <!-- supprimer -->
         <div>
           <button
-            class="btn btn-link red-color"
+            mat-raised-button
             (click)="deleteClent()"
             style="text-decoration: none"
           >
@@ -85,11 +82,11 @@
         </div>
         <!-- detail -->
         <div>
-          <button class="btn btn-link" style="text-decoration: none">
+          <button mat-raised-button style="text-decoration: none">
             <i class="fa fa-list" aria-hidden="true"></i>
           </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+</mat-card>

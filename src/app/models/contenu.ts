@@ -1,7 +1,7 @@
 export interface Contenu {
-  idContenu: number;
-  prix: number;
-  pointure: number;
-  couleur: string;
-  quantite: number;
+  idContenu: number | null;
+  prix: number | null;
+  pointure: number | null;
+  couleur: string | null;
+  quantite: number | null;
 }
