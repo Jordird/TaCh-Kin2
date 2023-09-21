@@ -1,121 +1,137 @@
 <div class="container" [formGroup]="infoClient">
   <div class="row">
-    <h3 class="red-color mt-2">Nouveau client</h3>
+    <h2 class="red-color mt-2">Nouveau client</h2>
   </div>
-  <div class="form-group" style="width: 49%">
-    <label for="" class="mb-1">Photo du client :</label>
-    <input type="file" class="form-control mb-2" formControlName="photo" />
-  </div>
-  <div class="row">
+  <mat-card class="p-3 m-2">
     <div class="container">
-      <div class="row">
+      <div class="container">
+        <div class="form-group">
+          <button type="button" mat-raised-button (click)="fileInput.click()">
+            Photo de l'article
+          </button>
+          <input
+            hidden
+            (change)="onFileSelected($event)"
+            #fileInput
+            type="file"
+            formControlName="photo"
+          />
+          <span class="file-name">{{ selectedFile?.name }}</span>
+        </div>
+      </div>
+
+      <div class="row m-2">
         <div class="col-md-6">
-          <div class="container mb-2">
-            <h3 class="blue-color m-0 p-0">
+          <div class="container">
+            <h3 class="blue-color mb-2">
               <i class="fa-solid fa-circle-info"></i>&nbsp; A propos
             </h3>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="text"
-              class="form-control"
-              aria-describedby="helpId"
-              placeholder="Nom "
-              formControlName="nom"
-            />
-          </div>
-          <div class="form-group mb-2">
-            <input
-              type="text"
-              class="form-control"
-              aria-describedby="helpId"
-              placeholder="Prenom"
-              formControlName="prenom"
-            />
-          </div>
-          <div class="d-flex mb-2">
-            <div class="form-check">
+          <div class="form-group full-width">
+            <mat-form-field class="full-width">
               <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="male"
-                value="male"
+                type="text"
+                matInput
+                placeholder="Nom "
+                formControlName="nom"
               />
-              <label class="form-check-label" for="male">Masculin</label>
-            </div>
-            <div style="width: 50px"></div>
-            <div class="form-check">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="full-width">
               <input
-                class="form-check-input"
-                type="radio"
-                name="gender"
-                id="female"
-                value="female"
+                type="text"
+                matInput
+                placeholder="Prenom"
+                formControlName="prenom"
               />
-              <label class="form-check-label" for="female">Féminin</label>
-            </div>
+            </mat-form-field>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="email"
-              class="form-control"
-              name=""
-              id=""
-              aria-describedby="helpId"
-              placeholder="E-mail"
-              formControlName="email"
-            />
+          <div class="d-flex">
+            <section class="example-section">
+              <label class="example-margin">Sexe:</label>
+              <mat-radio-group formControlName="sexe">
+                <mat-radio-button class="example-margin" value="Masculin"
+                  >Masculin</mat-radio-button
+                >
+                <mat-radio-button class="example-margin" value="Feminin"
+                  >Feminin</mat-radio-button
+                >
+              </mat-radio-group>
+            </section>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="tel"
-              class="form-control"
-              name=""
-              id=""
-              aria-describedby="helpId"
-              placeholder="Numero télephone"
-              formControlName="numeroPhone"
-            />
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <input
+                type="email"
+                matInput
+                placeholder="E-mail"
+                formControlName="email"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <span matPrefix>+261 &nbsp;</span>
+              <input
+                type="tel"
+                matInput
+                placeholder="Numero télephone"
+                formControlName="numeroPhone"
+              />
+            </mat-form-field>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="container mb-2">
-            <h3 class="blue-color m-0 p-0">
+          <div class="container">
+            <h3 class="blue-color mb-2">
               <i class="fa-solid fa-location-dot"></i>&nbsp;Adresse
             </h3>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="text"
-              class="form-control"
-              aria-describedby="helpId"
-              placeholder="Adresse"
-              formControlName="adresse"
-            />
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <input
+                type="text"
+                matInput
+                placeholder="Adresse"
+                formControlName="adresse"
+              />
+            </mat-form-field>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="text"
-              class="form-control"
-              aria-describedby="helpId"
-              placeholder="Ville"
-              formControlName="ville"
-            />
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <input
+                type="text"
+                matInput
+                placeholder="Ville"
+                formControlName="ville"
+              />
+            </mat-form-field>
           </div>
-          <div class="form-group mb-2">
-            <input
-              type="text"
-              class="form-control"
-              aria-describedby="helpId"
-              placeholder="Pays"
-              formControlName="pays"
-            />
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <input
+                type="text"
+                matInput
+                placeholder="Pays"
+                formControlName="pays"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <input
+                type="text"
+                matInput
+                placeholder="code postal"
+                formControlName="codePostal"
+              />
+            </mat-form-field>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </mat-card>
   <div style="display: flex; justify-content: flex-end">
     <app-deux-boutton (back)="goBack()" (clickSave)="save()"></app-deux-boutton>
   </div>

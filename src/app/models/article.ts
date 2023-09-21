@@ -1,5 +1,6 @@
 export interface Article {
   idArticle: number;
-  nomArticle: string;
-  idCategorie: number;
+  nomArticle: string | null;
+  idCategorie: number | null;
+  photo: string | null;
 }

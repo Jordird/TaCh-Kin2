@@ -1,87 +1,96 @@
 <div class="container">
   <div class="row mt-2">
-    <h3 class="red-color">Nouvelle article</h3>
+    <h2 class="red-color">Nouvelle article</h2>
   </div>
-  <form (ngSubmit)="onSubmit()">
+  <form [formGroup]="mainFormGroup" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="container">
-        <div class="card m-2 pb-3 row mainCard">
-          <div class="container form-group mb-3" [formGroup]="contenuForm">
-            <label class="mb-1">Photo de l'article :</label>
+        <mat-card class="p-2">
+          <!-- gauche -->
+          <div class="form-group mb-2">
+            <button type="button" mat-raised-button (click)="fileInput.click()">
+              Photo de l'article
+            </button>
             <input
-              type="file"
-              class="form-control"
-              style="width: 40%"
+              hidden
+              (change)="onFileSelected($event)"
               formControlName="photo"
+              #fileInput
+              type="file"
             />
+            <span class="file-name">{{ selectedFile?.name }}</span>
           </div>
-          <form class="d-flex">
+          <div class="row">
             <div class="col-md-6">
-              <div class="form-group mb-2" [formGroup]="articleForm">
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-describedby="helpId"
-                  placeholder="Nom article"
-                  name="nomArticle"
-                  formControlName="nomArticle"
-                />
+              <div class="form-group">
+                <mat-form-field class="full-width">
+                  <mat-label>Nom de l'article</mat-label>
+                  <input
+                    type="text"
+                    formControlName="nomArticle"
+                    matInput
+                    placeholder="Nom article"
+                  />
+                </mat-form-field>
               </div>
-              <div [formGroup]="contenuForm">
-                <div class="form-group mb-2">
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-describedby="helpId"
-                    placeholder="Prix "
-                    name="prix"
-                    formControlName="prix"
-                  />
+              <div>
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Prix </mat-label>
+                    <input
+                      type="number"
+                      formControlName="prix"
+                      matInput
+                      placeholder="Prix en Ar"
+                    />
+                  </mat-form-field>
                 </div>
-                <div class="form-group mb-2">
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-describedby="helpId"
-                    placeholder="Couleur"
-                    name="couleur"
-                    formControlName="couleur"
-                  />
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Couleur</mat-label>
+                    <input type="color" formControlName="couleur" matInput />
+                  </mat-form-field>
                 </div>
               </div>
             </div>
-            &nbsp;&nbsp;
-            <div class="col-md-6" [formGroup]="contenuForm">
-              <div class="form-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-describedby="helpId"
-                  placeholder="quantité"
-                  name="quantité"
-                  formControlName="quantite"
-                />
+            <!-- droite -->
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <mat-form-field class="full-width">
+                  <mat-label>Quantité</mat-label>
+                  <input
+                    type="number"
+                    matInput
+                    formControlName="quantite"
+                    placeholder="Quantité"
+                  />
+                </mat-form-field>
               </div>
-              <div class="form-group mb-2">
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-describedby="helpId"
-                  placeholder="Pointure"
-                  name="Pointure"
-                  formControlName="pointure"
-                />
+              <div class="form-group">
+                <mat-form-field class="full-width">
+                  <mat-label>Pointure</mat-label>
+                  <input
+                    type="number"
+                    matInput
+                    formControlName="pointure"
+                    placeholder="Pointure"
+                  />
+                </mat-form-field>
               </div>
-              <div [formGroup]="selectedCntrl">
-                <select class="form-select" formControlName="categorie">
-                  <option>
+              <div>
+                <mat-select
+                  formControlName="nomCategorie"
+                  placeholder="Choisissez une catégorie"
+                >
+                  <mat-option>
                     <app-select-artciles></app-select-artciles>
-                  </option>
-                </select>
+                  </mat-option>
+                </mat-select>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </mat-card>
       </div>
     </div>
     <div style="display: flex; justify-content: flex-end">

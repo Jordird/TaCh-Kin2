@@ -15,12 +15,8 @@ import { CategoryService } from 'src/app/services/category/category.service';
   templateUrl: './nouvel-article.component.html',
   styleUrls: ['./nouvel-article.component.scss'],
 })
-export class NouvelArticleComponent implements OnInit {
+export class NouvelArticleComponent {
   listCategories: Category[] = [];
-  articleForm!: FormGroup;
-  contenuForm!: FormGroup;
-  selectedCntrl!: FormGroup;
-
   constructor(
     private router: Router,
     private formBuider: FormBuilder,
@@ -28,68 +24,51 @@ export class NouvelArticleComponent implements OnInit {
     private contenuService: ContenuService,
     private categoryService: CategoryService
   ) {}
+  mainFormGroup = this.formBuider.group({
+    photo: [null, Validators.required],
+    nomArticle: [null, Validators.required],
+    prix: [null, Validators.required],
+    couleur: [null, Validators.required],
+    quantite: [null, Validators.required],
+    pointure: [null, Validators.required],
+    nomCategorie: [null, Validators.required],
+  });
 
-  ngOnInit(): void {
-    this.initArticleForm();
-    this.initContenuForm();
-    this.initList();
-    this.initSelectedForm();
-  }
-  initSelectedForm() {
-    this.selectedCntrl = this.formBuider.group({
-      categorie: new FormControl(),
-    });
-  }
+  selectedFile: any = null;
 
-  private initArticleForm() {
-    this.articleForm = this.formBuider.group({
-      nomArticle: [null, Validators.required],
-    });
-  }
-  private initContenuForm() {
-    this.contenuForm = this.formBuider.group({
-      photo: [null, Validators.required],
-      prix: [null, Validators.required],
-      couleur: [null, Validators.required],
-      quantite: [null, Validators.required],
-      pointure: [null, Validators.required],
-    });
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0] ?? null;
   }
 
-  initList() {
-    this.categoryService.list().subscribe({
-      next: (res) => {
-        this.listCategories = res;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
   onSubmit() {
-    const selectedCntrl = this.selectedCntrl.getRawValue();
-    const article = this.articleForm.getRawValue();
-    const contenu = this.contenuForm.getRawValue();
-    console.log(contenu);
-    console.log(article);
-    console.log(selectedCntrl);
-
-    this.contenuService.create(contenu).subscribe({
+    const articleMainForm = this.mainFormGroup.getRawValue();
+    console.log(articleMainForm);
+    this.articleService.create(articleMainForm).subscribe({
       next: (res) => {
-        alert('CONTENU CREATED');
+        alert('CREATED');
+
         this.router.navigate(['articles']);
       },
       error: (err) => {
-        alert('ERROR CONTENU');
+        alert('error');
       },
     });
-    this.articleService.create(article).subscribe({
+    this.contenuService.create(articleMainForm).subscribe({
       next: (res) => {
-        alert(' ARTICLE CREATED');
-        this.router.navigate(['articles']);
+        alert('CREATED');
+        this.router.navigate(['articles ']);
       },
       error: (err) => {
-        alert('ERROR ARTICLE');
+        alert('error');
+      },
+    });
+    this.categoryService.create(articleMainForm).subscribe({
+      next: (res) => {
+        alert('CREATED');
+        this.router.navigate(['articles ']);
+      },
+      error: (err) => {
+        alert('error');
       },
     });
   }

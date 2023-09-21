@@ -1,1 +1,113 @@
-<p>nouveau-vente works!</p>
+<div class="container">
+  <div class="container" [formGroup]="venteForm">
+    <h2 class="red-color mb-2">Nouveau vente</h2>
+    <div class="container">
+      <mat-card class="p-1 m-1">
+        <div class="row">
+          <!-- gauche -->
+          <div class="col">
+            <div class="container p-2">
+              <div class="container">
+                <mat-form-field>
+                  <mat-label>Nom du client</mat-label>
+                  <mat-select formControlName="nomClient">
+                    <mat-option>Option</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field>
+                    <mat-label>Date de création</mat-label>
+                    <input
+                      formControlName="date"
+                      matInput
+                      [matDatepicker]="picker"
+                    />
+                    <mat-datepicker-toggle
+                      matIconSuffix
+                      [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Description</mat-label>
+                    <textarea
+                      formControlName="description"
+                      matInput
+                      placeholder="Description"
+                    ></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- droite -->
+          <div class="col">
+            <div class="container p-2">
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Prix unitaire</mat-label>
+                    <input formControlName="prixUnitaire" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Quantité</mat-label>
+                    <input formControlName="quantite" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Prix total</mat-label>
+                    <input formControlName="prixTotal" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Prix HT</mat-label>
+                    <input formControlName="prixHT" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>TVA</mat-label>
+                    <input formControlName="tva" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Prix TTC</mat-label>
+                    <input formControlName="prixTTC" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <!-- boutton -->
+    <div class="container">
+      <div class="right">
+        <app-deux-boutton (back)="goBack()" (clickSave)="save()">
+        </app-deux-boutton>
+      </div>
+    </div>
+  </div>
+</div>

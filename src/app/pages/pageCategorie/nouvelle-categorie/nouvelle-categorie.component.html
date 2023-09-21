@@ -1,1 +1,32 @@
-<p>nouvelle-categorie works!</p>
+<div class="container">
+  <div style="margin: 10px">
+    <div class="container red-color"><h2>Nouvelle catégories</h2></div>
+
+    <form
+      class="form-control"
+      [formGroup]="categoryForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div>
+        <div class="container mt-2">
+          <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <mat-label>Nom catégories</mat-label>
+              <input matInput formControlName="nomCategorie" />
+            </mat-form-field>
+          </div>
+          <small *ngIf="cateogoryError" style="color: red"
+            >Veuillez entrer le nom catégorie !</small
+          >
+          <div class="container">
+            <div style="display: flex; justify-content: end">
+              <div class="d-flex">
+                <app-deux-boutton (back)="goBack()"></app-deux-boutton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

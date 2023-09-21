@@ -1,1 +1,114 @@
-<p>nouvel-achat works!</p>
+<div class="container">
+  <div class="container" [formGroup]="achatForm">
+    <h2 class="red-color mb-2">Nouveau achat</h2>
+    <div class="container">
+      <mat-card class="p-1 m-1">
+        <div class="row">
+          <!-- gauche -->
+          <div class="col">
+            <div class="container p-2">
+              <div class="container">
+                <mat-form-field class="full-width">
+                  <mat-label>Nom du client</mat-label>
+                  <mat-select formControlname="nomClient">
+                    <mat-option>Option</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Date de création</mat-label>
+                    <input
+                      matInput
+                      [matDatepicker]="picker"
+                      formControlname="date"
+                    />
+                    <mat-datepicker-toggle
+                      matIconSuffix
+                      [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Description</mat-label>
+                    <textarea
+                      matInput
+                      placeholder="Description"
+                      formControlName="description"
+                    >
+                    </textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- droite -->
+          <div class="col">
+            <div class="container p-2">
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Prix unitaire</mat-label>
+                    <input matInput formControlName="prixUnitaire" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="width">
+                    <mat-label>Quantité</mat-label>
+                    <input matInput formControlName="quantite" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Prix total</mat-label>
+                    <input matInput formControlName="quantite" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="width">
+                    <mat-label>Prix HT</mat-label>
+                    <input matInput formControlName="prixHT" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>TVA</mat-label>
+                    <input matInput formControlName="tva" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="container">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <mat-label>Prix TTC</mat-label>
+                    <input matInput formControlName="prixTTC" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <!-- boutton -->
+    <div class="container">
+      <div class="right">
+        <app-deux-boutton (back)="isBack()" (clickSave)="onSave()">
+        </app-deux-boutton>
+      </div>
+    </div>
+  </div>
+</div>
